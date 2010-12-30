@@ -16,13 +16,7 @@ class BadgesController < ApplicationController
     @badge = Badge.find params[:id]
   end
   def create
-    @badge = Badge.new()
-    @badge.name = params[:badge][:name]
-    @badge.description = params[:badge][:description]
-    if ! params[:badge][:image].nil?
-      @badge.image_filename = params[:badge][:image].original_filename
-      #@badge.image = params[:badge][:image].tempfile.read
-    end
+    @badge = Badge.new(params[:badge])
     
     if @badge.save
       redirect_to root_path
@@ -46,9 +40,10 @@ class BadgesController < ApplicationController
     Badge.delete params[:id]
     redirect_to root_path
   end
-  def pin
-    pp params
+  def badge_image
+    @badge = Badge.find params[:id]
     
-    
+    pp @badge.image_content_type
+    send_data(@badge.image_data, :type => @badge.image_content_type, :disposition => 'inline')
   end
 end

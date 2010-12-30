@@ -1,7 +1,7 @@
 <div id="badge-view" class="widget">
   <h2>Show Badge</h2>
   
-  <%= image_tag '', :class => 'badge-image' %>
+  <%= image_tag badge_image_badge_path(:id => @badge.id), :class => 'badge-image' %>
   
   <p>Name:<br />
   <%= @badge.name %></p>

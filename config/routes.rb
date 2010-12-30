@@ -4,7 +4,11 @@ BadgerBadger::Application.routes.draw do
   
   devise_for :users
   
-  resources :badges
+  resources :badges do
+    member do
+      get 'badge_image'
+    end
+  end
   resources :pins
   
 end
