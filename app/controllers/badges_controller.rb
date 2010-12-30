@@ -3,7 +3,7 @@ class BadgesController < ApplicationController
   before_filter :authorize_admin_user, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
-    @pins = Pin.where(:user_id => current_user.id)
+    @pins = current_user.pins
     @badges = @pins.map { |p| p.badge }
   end
   def show

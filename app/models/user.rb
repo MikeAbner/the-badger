@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   devise  :database_authenticatable, :registerable
   field   :admin, :type => Boolean, :default => false
-  references_many :pins
+  embeds_many :pins
   
   def username
     email.split('@')[0]

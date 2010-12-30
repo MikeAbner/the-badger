@@ -12,11 +12,11 @@ class PinsController < ApplicationController
     
     @pin = Pin.new
     @pin.pinned_at = DateTime.now
-    
-    @pin.user = @user
     @pin.badge = @badge
     
-    if @pin.save
+    @user.pins << @pin
+    
+    if @pin.save and @user.save
       flash[:notice] = "You have pinned a badge on #{@user.email}!"
       if ENV['RAILS_ENV'] == 'production'
         BadgeMailer.badge_pinned_email(current_user, @user, @badge).deliver
