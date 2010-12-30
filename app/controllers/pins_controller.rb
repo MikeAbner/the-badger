@@ -7,10 +7,15 @@ class PinsController < ApplicationController
     @badge = Badge.find params[:badge_id]
   end
   def create
-    @user = User.where(:email => params[:user][:email]).one
-    @badge = Badge.find params[:badge][:id]
-    
     @pin = Pin.new
+    @badge = Badge.find params[:badge][:id]
+    @user = User.where(:email => params[:user][:email]).one
+    if @user.nil?
+      flash[:alert] = "That user does not exist!"
+      render :action => 'new'
+      return
+    end
+    
     @pin.pinned_at = DateTime.now
     @pin.badge = @badge
     
