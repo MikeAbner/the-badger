@@ -1,7 +1,8 @@
 class BadgeMailer < ActionMailer::Base
   default :from => "mike.abner@gmail.com"
   
-  def badge_pinned_email(user, badge)
+  def badge_pinned_email(current_user, user, badge)
+    @current_user = current_user
     @user = user
     @badge = badge
     @url = 'http://the-badger.heroku.com/badges'
