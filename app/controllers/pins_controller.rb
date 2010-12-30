@@ -1,6 +1,5 @@
 class PinsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :authorize_admin_user
   
   def new
     @pin = Pin.new
