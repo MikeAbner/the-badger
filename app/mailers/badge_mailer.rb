@@ -4,12 +4,7 @@ class BadgeMailer < ActionMailer::Base
   def badge_pinned_email(user, badge)
     @user = user
     @badge = badge
-    @url = ''
-    if production
-      @url = 'http://the-badger.heroku.com/badges'
-    else
-      @url = 'http://localhost:3000/badges'
-    end
+    @url = 'http://the-badger.heroku.com/badges'
     
     mail(:to => @user.email, :subject => "#{current_user.username} has pinned a badge on you at The Badger!")
   end

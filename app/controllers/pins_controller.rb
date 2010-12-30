@@ -18,8 +18,10 @@ class PinsController < ApplicationController
     
     if @pin.save
       flash[:notice] = "You have pinned a badge on #{@user.email}!"
-      if production
+      if ENV['RAILS_ENV'] == 'production'
         BadgeMailer.badge_pinned_email(@user, @badge).deliver
+      else
+        puts "we would send an e-mail here if we were in production mode!"
       end
       redirect_to root_path
     else
