@@ -18,7 +18,9 @@ class PinsController < ApplicationController
     
     if @pin.save
       flash[:notice] = "You have pinned a badge on #{@user.email}!"
-      BadgeMailer.pinned_badge_email(@user, @badge).deliver
+      if production
+        BadgeMailer.badge_pinned_email(@user, @badge).deliver
+      end
       redirect_to root_path
     else
       flash[:alert] = "Oh no!  Something went wrong.  Try again"
