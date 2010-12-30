@@ -10,8 +10,10 @@
   <%= @badge.description %></p>
   
   <% if current_user.admin %>
-    <p><%= link_to 'Edit Badge', edit_badge_path(@badge) %>&nbsp;&nbsp;<%= link_to 'Delete Badge', badge_path(@badge) %>
+    <p><%= link_to 'Edit Badge', edit_badge_path(@badge) %>&nbsp;&nbsp;<%= link_to 'Delete Badge', badge_path(@badge), :method => 'delete' %>
   <% end %>
+  
+  <p><%= link_to 'Pin this badge', new_pin_path(:badge_id => @badge.id) %></p>
   
   <p><%= link_to 'Back', root_path %></p>
   

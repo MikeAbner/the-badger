@@ -1,0 +1,10 @@
+<div id="my-badges">
+  <h2>My Badges</h2>
+  <% if @badges.size == 0 %>
+    <p>Oh no!  No one has pinned any badges to you yet!</p>
+  <% else %>
+    <%= render :partial => 'badges/badge_list' %>
+    <br style='clear:both;'/>
+  <% end %>
+  <p><%= link_to 'Back', root_path %></p>
+</div>

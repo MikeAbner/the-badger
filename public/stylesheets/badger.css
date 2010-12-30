@@ -117,3 +117,12 @@ p {
 #badge-view {
 	width: 400px;
 }
+
+#my-badges h2 {
+	color: #ba2b00;
+	font-size: 14pt;
+	margin-bottom: 10px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ba2b00;
+}
+}

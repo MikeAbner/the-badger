@@ -1,0 +1,15 @@
+<div id="new-pin-widget" class="widget">
+  <h2>Pin Badge</h2>
+  <%= form_for @pin do |f| %>
+    <%= image_tag '', :class => 'badge-image' %>
+    <p><%= @badge.name %></p><br/>
+    
+    <p><%= f.label 'Email' %><br />
+    <%= text_field :user, :email %></p>
+    
+    <%= hidden_field :badge, :id %>
+
+    <p><%= f.submit "Pin Badge" %></p>
+  <% end %>
+  <%= link_to 'Home', root_path %>
+</div>
