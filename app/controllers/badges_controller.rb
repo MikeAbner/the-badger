@@ -1,7 +1,7 @@
-require 'base64'
-require 'pp'
-
 class BadgesController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :authorize_admin_user, :only => [:new, :edit, :create, :update, :destroy]
+  
   def index
     @pins = Pin.where(:user_id => current_user.id)
     @badges = @pins.map { |p| p.badge }
