@@ -88,3 +88,32 @@ p {
 	padding-bottom: 4px;
 	border-bottom: 1px solid #ba2b00;
 }
+
+#new-badge-widget {
+	width: 500px;
+}
+
+.badge-in-list {
+	width: 150px;
+	height: 150px;
+	margin: 20px;
+	float: left;
+	border: 1px solid #aaaaaa;
+}
+
+.badge-in-list p {
+	margin-left: 10px;
+}
+
+.badge-image {
+	width: 100px;
+	height: 100px;
+	overflow: auto;
+	margin-top: 15px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+#badge-view {
+	width: 400px;
+}

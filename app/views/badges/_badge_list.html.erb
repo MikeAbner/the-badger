@@ -1,3 +1,6 @@
 <% @badges.each do |badge| %>
-  
+  <div id="badge_<%= badge.id %>" class='badge-in-list'>
+    <%= link_to image_tag('', :class => 'badge-image'), badge_path(badge) %>
+    <p><%= truncate badge.name, :length => 18 %></p>
+  </div>
 <% end %>

@@ -1,0 +1,18 @@
+<div id="badge-view" class="widget">
+  <h2>Show Badge</h2>
+  
+  <%= image_tag '', :class => 'badge-image' %>
+  
+  <p>Name:<br />
+  <%= @badge.name %></p>
+  
+  <p>Description:<br/>
+  <%= @badge.description %></p>
+  
+  <% if current_user.admin %>
+    <p><%= link_to 'Edit Badge', edit_badge_path(@badge) %>&nbsp;&nbsp;<%= link_to 'Delete Badge', badge_path(@badge) %>
+  <% end %>
+  
+  <p><%= link_to 'Back', root_path %></p>
+  
+</div>

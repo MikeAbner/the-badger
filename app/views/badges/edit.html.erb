@@ -1,5 +1,5 @@
 <div id="new-badge-widget" class="widget">
-  <h2>Add Badge</h2>
+  <h2>Edit Badge</h2>
   <%= form_for @badge, :html => {:multipart => true} do |f| %>
 
     <p><%= f.label :name %><br />
@@ -11,6 +11,6 @@
     <p><%= f.label :image%><br/>
     <%= f.file_field :image %></p>
 
-    <p><%= f.submit "Add Badge" %></p>
+    <p><%= f.submit "Save Badge" %></p>
   <% end %>
 </div>
