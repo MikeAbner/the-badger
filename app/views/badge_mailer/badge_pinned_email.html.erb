@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>You've had a badge pinned to you!</h1>
+    <p>
+      <%= current_user.username %> has pinned a badge to you at The Badger!
+    </p>
+    <p>
+      Come and see which badge it is! <%= @url %>.
+    </p>
+    <p>Pin some badges to your friends at <%= link_to 'The Badger', root_path %></p>
+  </body>
+</html>
