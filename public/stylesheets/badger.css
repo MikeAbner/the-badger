@@ -1,0 +1,90 @@
+html {
+	background-color: #384053;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+#site {
+	width: 800px;
+	margin-top: 20px;
+	margin-left: 20px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 15px;
+	font-family: 'Lucida Grande';
+	overflow: auto;
+	border: 2px solid #aaaaaa;
+}
+
+#header {
+	width: 100%;
+	border-bottom: 2px solid #ba2b00;
+	overflow: auto;
+}
+
+#title {
+	float: left;
+}
+
+#title h1 {
+	color: #ba2b00;
+	font-size: 18pt;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+
+#greeting {
+	float: right;
+}
+
+.notice {
+	margin: 10px;
+	color: green;
+}
+
+.alert {
+	margin: 10px;
+	color: red;
+}
+
+.widget {
+	border: 2px solid #aaaaaa;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.widget h2 {
+	color: #ba2b00;
+	font-size: 14pt;
+	margin-bottom: 10px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ba2b00;
+}
+
+.widget p {
+	margin-bottom: 5px;
+}
+
+.widget input {
+	margin-bottom: 10px;
+}
+
+
+#login-widget {
+	width: 300px;
+}
+
+#signup-widget {
+	width: 300px;
+}
+
+#badges h2 {
+	color: #ba2b00;
+	font-size: 14pt;
+	margin-bottom: 10px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ba2b00;
+}

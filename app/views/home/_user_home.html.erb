@@ -1,0 +1,16 @@
+<div id="welcome">
+  Remember, 37 badges is the minimum recommended number of badges!</p>
+  <p>Click on a badge below to pin it to one of your friends or check out your <%= link_to 'Badges', '' %> page to see the badges your friends have pinned to you!</p>
+</div>
+<div id="badges">
+  <h2>Available Badges</h2>
+  <% if current_user.admin %>
+      <p><%= link_to 'Add a badge', new_badge_path %></p>
+  <% end %>
+  <% if @badges.size == 0 %>
+    <p>Oh no!  There aren't any badges yet!</p>
+  <% else %>
+    <%= render :partial => 'badges/badge_list' %>
+  <% end %>
+  
+</div>
